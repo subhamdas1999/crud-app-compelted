@@ -1,12 +1,19 @@
 const axios = require('axios');
 
+PORT=process.env.PORT
 
-
+HOST=process.env.HOST
+console.log({PORT})
+console.log({HOST})
 
 exports.homeRoutes = (req, res) => {
    
 // Make a get request to /api/users
-axios.get('http://localhost:3000/api/users')
+
+const BASE_URL = `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}`
+
+
+axios.get(`${BASE_URL}/api/users`)
 .then(function(response){
 
     // console code for check in terminal
@@ -33,7 +40,7 @@ exports.add_user = (req, res) =>{
 
 exports.update_user = (req, res) =>
 {
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get(`${BASE_URL}/api/users`, { params : { id : req.query.id }})
     .then(function(userdata){
         res.render("update_user", { user : userdata.data})
     })
