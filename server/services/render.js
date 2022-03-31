@@ -6,15 +6,11 @@ HOST=process.env.HOST
 console.log({PORT})
 console.log({HOST})
 
-
 exports.homeRoutes = (req, res) => {
    
 // Make a get request to /api/users
 
-const BASE_URL = `${process.env.PROTOCOL}://${process.env.HOST}`
-
-
-console.log({BASE_URL})
+const BASE_URL = process.env.BASE_URL
 
 
 axios.get(`${BASE_URL}/api/users`)
