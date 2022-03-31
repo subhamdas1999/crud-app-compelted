@@ -53,7 +53,7 @@ const dotenv = require('dotenv')
 
 dotenv.config({path:'config.env'})
 
-const port = process.env.PORT12 || 2001
+const port = process.env.PORT12 || 3000
 
 
 // parse request to body-parser
