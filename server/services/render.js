@@ -11,7 +11,7 @@ exports.homeRoutes = (req, res) => {
    
 // Make a get request to /api/users
 
-const BASE_URL = `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}`
+const BASE_URL = `${process.env.PROTOCOL}://${process.env.HOST}`
 
 
 console.log({BASE_URL})
