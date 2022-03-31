@@ -3,6 +3,7 @@ const app = express()
 const morgan = require('morgan')
 const bodyparser = require("body-parser");
 const path = require('path');
+require('dotenv').config()
 
 
 //const connectDB = require('./server/database/connection');
@@ -12,8 +13,9 @@ const path = require('path');
 
 
 //Alternate way to connect mongoDb with application STARt
+
 const mongoose = require('mongoose');
-const DB = 'mongodb+srv://admin:admin123@cluster0.tqdjz.mongodb.net/users?retryWrites=true&w=majority'
+const DB = "mongodb+srv://admin:admin123@cluster0.tqdjz.mongodb.net/users?retryWrites=true&w=majority"
 
  mongoose.connect(DB,{
 
@@ -28,6 +30,9 @@ const DB = 'mongodb+srv://admin:admin123@cluster0.tqdjz.mongodb.net/users?retryW
 
 })
 .catch((err)=> {console.log(`no connection`)});
+
+
+
 
 
 //Alternate way to connect mongoDb with application END
@@ -53,9 +58,15 @@ const dotenv = require('dotenv')
 
 dotenv.config({path:'config.env'})
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT 
+
+
+
+
 
 console.log({port});
+
+
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true}))
 
