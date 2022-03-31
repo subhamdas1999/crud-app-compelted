@@ -55,7 +55,7 @@ dotenv.config({path:'config.env'})
 
 const port = process.env.PORT || 3000
 
-
+console.log({port});
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended : true}))
 
